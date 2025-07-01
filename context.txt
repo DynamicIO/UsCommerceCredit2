@@ -1,0 +1,86 @@
+Create a professional, mobile-optimized website for a private financial institution named US Commerce Credit, Corp., headquartered in Miami, FL.
+🔹 Brand Identity:
+
+    Industry: Commercial finance, investment banking, private lending
+
+    Tagline: "We Collateralize Your Future"
+
+    Visual tone: Trustworthy, clean, institutional
+
+    Colors: Deep navy blue, charcoal gray, white, metallic silver accents
+
+    Typography: Clean, modern sans-serif (e.g., Inter, Poppins, or Open Sans)
+
+📱 Requirements:
+
+    Fully responsive and mobile-first layout
+
+    Use Tailwind CSS or similar utility-first styling
+
+    Include light/dark mode toggle
+
+    Smooth animations (subtle fade-ins, scroll reveals)
+
+🏗️ Site Structure:
+
+    Homepage
+
+        Hero section with tagline, CTA (e.g., “Get Funded Today”)
+
+        Company overview with bullet points like:
+
+            "$4.6B+ in closed financing deals"
+
+            "$150B in managed collateral"
+
+            "Established in 2007"
+
+        Trust logos or placeholder badges
+
+        Call to Action: “Explore Services” / “Contact Us”
+
+    About Us
+
+        Company mission and values
+
+        History and leadership overview
+
+        Headquarters: 999 Brickell Ave, Suite 820, Miami, FL 33131
+
+    Services
+
+        Commercial Real Estate Loans
+
+        Mergers & Acquisitions (Hotels/Resorts)
+
+        Oil, Gas & Mineral Financing
+
+        Land Acquisition
+
+        Economic Development Projects
+
+    Contact
+
+        Inquiry form with fields: name, company, email, funding type, message
+
+        Email: contact@uscommercecredit.com (placeholder)
+
+        Google Maps embed for Miami HQ
+
+⚙️ Technical Features:
+
+    Clean HTML structure (or React with Tailwind if preferred)
+
+    SEO-ready: title tags, meta descriptions, Open Graph tags
+
+    Mobile menu with collapsible navigation
+
+    Light integration hooks (EmailJS, Formspree, etc.) for forms
+
+✨ Optional Enhancements:
+
+    Background image of Miami skyline or corporate office
+
+    Testimonials or deal showcase carousel
+
+    Scroll-triggered finance stats counter

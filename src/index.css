@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Ensure proper text contrast in dark mode */
+  .dark body {
+    color: #f3f4f6;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-navy-800 hover:bg-navy-900 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-navy-800 text-navy-800 hover:bg-navy-800 hover:text-white dark:border-navy-800 dark:text-navy-800 dark:hover:bg-navy-900 dark:hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-charcoal-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-charcoal-600;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-navy-800 to-navy-900 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animate-counter {
+    animation: counter 2s ease-out forwards;
+  }
+  
+  /* Improved Miami skyline background with better dark mode support */
+  .bg-miami-skyline {
+    background-image: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 39, 97, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f8fafc" width="1200" height="600"/><rect fill="%23e2e8f0" x="0" y="400" width="1200" height="200"/><rect fill="%2394a3b8" x="100" y="300" width="40" height="300"/><rect fill="%2364748b" x="200" y="250" width="60" height="350"/><rect fill="%2394a3b8" x="320" y="200" width="45" height="400"/><rect fill="%2364748b" x="420" y="280" width="35" height="320"/><rect fill="%2394a3b8" x="500" y="220" width="50" height="380"/><rect fill="%2364748b" x="600" y="180" width="55" height="420"/><rect fill="%2394a3b8" x="720" y="240" width="40" height="360"/><rect fill="%2364748b" x="820" y="200" width="45" height="400"/><rect fill="%2394a3b8" x="920" y="260" width="35" height="340"/><rect fill="%2364748b" x="1000" y="290" width="50" height="310"/></svg>');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* Dark mode specific adjustments */
+  .dark .bg-miami-skyline {
+    background-image: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 39, 97, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23374151" width="1200" height="600"/><rect fill="%234b5563" x="0" y="400" width="1200" height="200"/><rect fill="%236b7280" x="100" y="300" width="40" height="300"/><rect fill="%23374151" x="200" y="250" width="60" height="350"/><rect fill="%236b7280" x="320" y="200" width="45" height="400"/><rect fill="%23374151" x="420" y="280" width="35" height="320"/><rect fill="%236b7280" x="500" y="220" width="50" height="380"/><rect fill="%23374151" x="600" y="180" width="55" height="420"/><rect fill="%236b7280" x="720" y="240" width="40" height="360"/><rect fill="%23374151" x="820" y="200" width="45" height="400"/><rect fill="%236b7280" x="920" y="260" width="35" height="340"/><rect fill="%23374151" x="1000" y="290" width="50" height="310"/></svg>');
+  }
+  
+  /* Form inputs dark mode improvements */
+  .dark input[type="text"],
+  .dark input[type="email"],
+  .dark select,
+  .dark textarea {
+    color: #f3f4f6;
+  }
+  
+  .dark input[type="text"]::placeholder,
+  .dark input[type="email"]::placeholder,
+  .dark textarea::placeholder {
+    color: #9ca3af;
+  }
+} 
