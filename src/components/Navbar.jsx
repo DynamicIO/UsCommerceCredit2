@@ -128,13 +128,6 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block w-full mt-4 btn-primary text-center"
-              >
-                Get Funded Today
-              </Link>
             </div>
           </div>
         )}
