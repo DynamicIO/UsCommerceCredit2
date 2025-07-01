@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext, useContext } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ServicesPage from './pages/ServicesPage'
@@ -44,6 +45,7 @@ function App() {
   return (
     <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
       <Router>
+        <ScrollToTop />
         <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
           <div className="bg-white dark:bg-charcoal-900 text-charcoal-900 dark:text-white transition-colors duration-300">
             <Navbar />
