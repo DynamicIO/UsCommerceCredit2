@@ -6,16 +6,42 @@ import { useDarkMode } from '../App'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [hidden, setHidden] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const { darkMode, toggleDarkMode } = useDarkMode()
   const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      const currentScrollY = window.scrollY
+      
+      // Set scrolled state for background
+      setScrolled(currentScrollY > 50)
+      
+      // Hide/show navbar based on scroll direction (but not when mobile menu is open)
+      if (!isOpen) {
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          // Scrolling down & past 100px
+          setHidden(true)
+        } else if (currentScrollY < lastScrollY) {
+          // Scrolling up
+          setHidden(false)
+        }
+      }
+      
+      setLastScrollY(currentScrollY)
     }
-    window.addEventListener('scroll', handleScroll)
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [lastScrollY, isOpen])
+
+  // Show navbar when mobile menu is opened
+  useEffect(() => {
+    if (isOpen) {
+      setHidden(false)
+    }
+  }, [isOpen])
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -31,6 +57,8 @@ const Navbar = () => {
       scrolled 
         ? 'bg-white/95 dark:bg-charcoal-900/95 backdrop-blur-sm shadow-lg' 
         : 'bg-transparent'
+    } ${
+      hidden ? 'transform -translate-y-full' : 'transform translate-y-0'
     }`}>
       <div className="container-custom">
         <div className="flex justify-between items-center py-4">
